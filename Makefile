@@ -6,11 +6,11 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 16:11:26 by ytouab            #+#    #+#              #
-#    Updated: 2022/03/20 19:37:48 by ytouab           ###   ########.fr        #
+#    Updated: 2022/03/21 11:43:50 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= minishell
+NAME 		= philo
 
 OBJS		= ${SRC:.c=.o}
 
