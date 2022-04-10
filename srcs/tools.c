@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 16:15:09 by ytouab            #+#    #+#             */
-/*   Updated: 2022/04/09 09:41:40 by ytouab           ###   ########.fr       */
+/*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
+/*   Updated: 2022/04/09 09:50:39 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../philosophers.h"
 
-int	main(int ac, char **av)
+void	ft_exit(t_data *data)
 {
-	t_data	data;
-
-	if (ac == 6 || ac == 5)
-	{
-	}
-	else
-		ft_error(data);
-	return (0);
 }
+
+void	ft_error(int error)
+{
+}
+
+void	ft_print_error(char *s)
+{
+}
+

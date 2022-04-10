@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
+/*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:55:24 by ytouab            #+#    #+#             */
-/*   Updated: 2022/04/03 09:03:42 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/04/09 09:46:33 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-int	ft_isdigit_signs(const char *s, t_data *data)
+void	ft_isdigit_signs(const char *s, t_data *data)
 {
 	size_t	i;
 
@@ -31,12 +31,11 @@ int	ft_isdigit_signs(const char *s, t_data *data)
 		i++;
 	if (i == ft_strlen(s))
 		ft_error(data);
-	return (1);
 }
 
 int	super_atoi(const char *str, t_data *data)
 {
-	int	i;
+	int		i;
 	size_t	nb;
 
 	i = 0;
