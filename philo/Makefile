@@ -6,7 +6,7 @@
 #    By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 16:11:26 by ytouab            #+#    #+#              #
-#    Updated: 2022/06/18 19:31:15 by ytouab           ###   ########.fr        #
+#    Updated: 2022/06/19 18:01:12 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ CC		=	gcc
 CF		=	-Wall -Wextra -Werror
 
 SRCS		=	srcs/parse.c \
-				srcs/tools.c
+				srcs/tools.c \
+				srcs/utils.c \
 
 
 SRC			=	philosophers.c \

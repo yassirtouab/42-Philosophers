@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:11:50 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/18 22:20:18 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/06/19 18:04:28 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,16 @@ typedef struct s_data
 	//	PARSING FUNCTIONS
 
 int		super_atoi(const char *str, t_data *data, size_t nb, int i);
-void	ft_isdigit_signs(const char *s, t_data *data);
+void	ft_isdigit_signs(const char *s, t_data *data, size_t i);
 
 	//	TOOLS
 
+void	ft_init_data(t_data *data);
 void	ft_exit(t_data *data, int code);
 void	ft_error(t_data *data, int error);
+
+	//	UTILS
+
 size_t	ft_strlen(const char *s);
 int		ft_delimiter(char c, char *charset);
 char	*ft_strchr(const char *str, int c);
