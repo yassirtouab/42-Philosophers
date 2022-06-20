@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:15:09 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/19 18:34:31 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/06/20 12:27:50 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ int	main(int ac, char **av)
 	struct timeval	current_time;
 
 	i = 0;
-	gettimeofday(&current_time, NULL);
-	printf("TIME: |%d|\n", current_time.tv_usec);
-	take_args(&data, ac, av);
+	(void)i;
+
 	if (ac == 6 || ac == 5)
 	{
+		gettimeofday(&current_time, NULL);
+		printf("TIME: |%ld|\n", current_time.tv_usec);
+		take_args(&data, ac, av);
 		printf("number_of_philos: %d\n", data.number_of_philos);
 		printf("time_to_die: %d\n", data.time_to_die);
 		printf("time_to_eat: %d\n", data.time_to_eat);
