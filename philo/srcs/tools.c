@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/19 18:00:16 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/06/23 16:58:57 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_error(t_data *data, int error)
 	ft_exit(data, 1);
 }
 
-void	ft_init_data(t_data *data)
+void	ft_init_data(t_data *data, int ac)
 {
 	data->dead = 0;
 	data->start_time = 0;
@@ -41,4 +41,17 @@ void	ft_init_data(t_data *data)
 	data->time_to_sleep = 0;
 	data->must_eat_times = 0;
 	data->max_meals = 0;
+	data->ac = ac;
+}
+
+void	ft_print_params(t_data *data)
+{
+	printf("number_of_philos: %d\n", data->number_of_philos);
+	printf("time_to_die: %d\n", data->time_to_die);
+	printf("time_to_eat: %d\n", data->time_to_eat);
+	printf("time_to_sleep: %d\n", data->time_to_sleep);
+	if (data->ac == 6)
+		printf("must_eat_times: %d\n", data->must_eat_times);
+	else
+		printf("must_eat_times not specified\n");
 }

@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:11:50 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/19 18:04:28 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/06/21 17:31:49 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct s_data
 	int				time_to_sleep;
 	int				must_eat_times;
 	int				max_meals;
+	int				ac;
 }						t_data;
 
 	//	PARSING FUNCTIONS
@@ -52,7 +53,8 @@ void	ft_isdigit_signs(const char *s, t_data *data, size_t i);
 
 	//	TOOLS
 
-void	ft_init_data(t_data *data);
+void	ft_print_params(t_data *data);
+void	ft_init_data(t_data *data, int ac);
 void	ft_exit(t_data *data, int code);
 void	ft_error(t_data *data, int error);
 
