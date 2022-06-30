@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/23 16:58:57 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/07/01 00:00:22 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_error(t_data *data, int error)
 	else if (error == 2)
 		write(2, "Error: Negative argument detected\n", 35);
 	else if (error == 3)
-		write(2, "Error: Argument overflowing max int\n", 49);
+		write(2, "Error: Argument overflowing max int\n", 36);
 	ft_exit(data, 1);
 }
 
