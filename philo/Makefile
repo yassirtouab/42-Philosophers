@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+         #
+#    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 16:11:26 by ytouab            #+#    #+#              #
-#    Updated: 2022/06/19 18:01:12 by ytouab           ###   ########.fr        #
+#    Updated: 2022/07/01 18:12:14 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ CC		=	gcc
 
 CF		=	-Wall -Wextra -Werror
 
+TH		=	-pthread
+
 SRCS		=	srcs/parse.c \
 				srcs/tools.c \
 				srcs/utils.c \
@@ -36,11 +38,11 @@ SRC			=	philosophers.c \
 
 
 .c.o:
-		@${CC} ${CF} -c $< -o ${<:.c=.o}
+		@${CC} ${CF} ${TH} -c $< -o ${<:.c=.o}
 
 
 $(NAME):	${OBJS}
-		@${CC} ${CF} ${OBJS} -o ${NAME}
+		@${CC} ${CF} ${TH} ${OBJS} -o ${NAME}
 		@echo ${GREEN}"Compilation Done ✅"
 
 all:	${NAME}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:55:24 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/19 15:39:31 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:29:52 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,24 @@ int	super_atoi(const char *str, t_data *data, size_t nb, int i)
 			ft_error(data, 2);
 	}
 	return (nb * sym);
+}
+
+void	take_args(t_data *data, int ac, char **av)
+{
+	int	i;
+
+	i = 1;
+	ft_init_data(data, ac);
+	while (i < ac)
+	{
+		ft_isdigit_signs(av[i], data, 0);
+		super_atoi(av[i], data, 0, 0);
+		i++;
+	}
+	data->number_of_philos = super_atoi(av[1], data, 0, 0);
+	data->time_to_die = super_atoi(av[2], data, 0, 0);
+	data->time_to_eat = super_atoi(av[3], data, 0, 0);
+	data->time_to_sleep = super_atoi(av[4], data, 0, 0);
+	if (ac == 6)
+		data->must_eat_times = super_atoi(av[5], data, 0, 0);
 }

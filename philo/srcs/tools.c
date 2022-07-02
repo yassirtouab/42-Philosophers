@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/07/01 00:00:22 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/07/01 17:20:12 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_error(t_data *data, int error)
 	else if (error == 1)
 		write(2, "Error: Enter a valid number\n", 29);
 	else if (error == 2)
-		write(2, "Error: Negative argument detected\n", 35);
+		write(2, "Error: Negative argument\n", 25);
 	else if (error == 3)
 		write(2, "Error: Argument overflowing max int\n", 36);
 	ft_exit(data, 1);
@@ -42,6 +42,14 @@ void	ft_init_data(t_data *data, int ac)
 	data->must_eat_times = 0;
 	data->max_meals = 0;
 	data->ac = ac;
+}
+
+size_t	ft_curr_time(void)
+{
+	struct timeval	curr_time;
+
+	gettimeofday(&curr_time, NULL);
+	return ((curr_time.tv_sec * 1000) + (curr_time.tv_usec / 1000));
 }
 
 void	ft_print_params(t_data *data)
