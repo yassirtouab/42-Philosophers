@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:11:50 by ytouab            #+#    #+#             */
-/*   Updated: 2022/07/01 19:46:21 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/04 03:00:08 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@
 
 	// COLOR CODES
 
-# define DEFAULT			"\033[0m"
-# define RED			"\033[0;31m"
-# define GREEN			"\033[0;32m"
-# define YELLOW			"\033[0;33m"
-# define PURPLE			"\033[0;35m"
-# define CYAN			"\033[0;36m"
-
+# define DEFAULT		"\033[0m"
+# define BLUE			"\033[1;34m"
+# define RED			"\033[1;31m"
+# define GREEN			"\033[1;32m"
+# define YELLOW			"\033[1;33m"
+# define PURPLE			"\033[1;35m"
+# define CYAN			"\033[1;36m"
 
 	// STRUCTS
 
@@ -83,6 +83,8 @@ void	ft_print_params(t_data *data);
 void	ft_init_data(t_data *data, int ac);
 void	ft_exit(t_data *data, int code);
 void	ft_error(t_data *data, int error);
+void	ft_print_event(t_philo *ph, int status);
+void	ft_status_print(size_t time, int ph, char *event);
 
 	//	UTILS
 
@@ -93,5 +95,15 @@ char	*ft_strchr(const char *str, int c);
 	//	TIME
 
 size_t	ft_curr_time(void);
+void	ft_usleep(size_t time);
+
+	//	EVENTS
+
+void	ft_thinking(t_philo *ph);
+void	ft_take_forks(t_philo *ph);
+void	ft_eating(t_philo *ph);
+void	ft_put_forks(t_philo *ph);
+void	ft_dead(t_philo *ph);
+void	ft_sleeping(t_philo *ph);
 
 #endif

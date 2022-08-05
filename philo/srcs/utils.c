@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:59:54 by ytouab            #+#    #+#             */
-/*   Updated: 2022/06/19 18:05:04 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/07/12 01:53:06 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,13 @@ int	ft_delimiter(char c, char *charset)
 		if (charset[i] == c)
 			return (1);
 	return (0);
+}
+
+void	ft_usleep(size_t time)
+{
+	size_t	start;
+
+	start = ft_curr_time();
+	while ((ft_curr_time() - time) < start)
+		usleep(100);
 }

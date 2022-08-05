@@ -6,7 +6,7 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 16:11:26 by ytouab            #+#    #+#              #
-#    Updated: 2022/07/01 18:12:14 by ytouab           ###   ########.fr        #
+#    Updated: 2022/07/12 01:53:58 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ TH		=	-pthread
 SRCS		=	srcs/parse.c \
 				srcs/tools.c \
 				srcs/utils.c \
+				srcs/events.c \
 
 
 SRC			=	philosophers.c \

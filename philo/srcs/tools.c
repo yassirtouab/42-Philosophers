@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/07/01 17:20:12 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/05 01:22:54 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,38 @@ size_t	ft_curr_time(void)
 
 	gettimeofday(&curr_time, NULL);
 	return ((curr_time.tv_sec * 1000) + (curr_time.tv_usec / 1000));
+}
+
+void	ft_print_event(t_philo *ph, int status)
+{
+	char	*event;
+
+	pthread_mutex_lock(&ph->data->event);
+	if (status == THINKING)
+		event = PURPLE"is thinking";
+	else if (status == TOOK_FORK)
+		event = YELLOW"has taken a fork";
+	else if (status == EATING)
+		event = GREEN"is eating";
+	else if (status == SLEEPING)
+		event = CYAN"is sleeping";
+	else if (status == DEAD)
+	{
+		ft_status_print(ft_curr_time() - ph->data->start_time,
+			ph->id + 1, RED"died");
+		return ;
+	}
+	ft_status_print(ft_curr_time() - ph->data->start_time, ph->id + 1, event);
+	pthread_mutex_unlock(&ph->data->event);
+}
+
+void	ft_status_print(size_t time, int ph, char *event)
+{
+	printf(GREEN" ✓ ");
+	printf(BLUE"%zu\033[1;32m m/s ", time);
+	printf("Philo ");
+	printf("[\033[1;34m%d\033[1;32m] "DEFAULT, ph);
+	printf("%s\n"DEFAULT, event);
 }
 
 void	ft_print_params(t_data *data)
