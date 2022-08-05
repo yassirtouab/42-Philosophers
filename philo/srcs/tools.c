@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/08/05 01:22:54 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/05 17:56:50 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	ft_exit(t_data *data, int code)
 void	ft_error(t_data *data, int error)
 {
 	if (error == 0)
-		write(2, "Error: Wrong number of arguments\n", 34);
+		write(2, RED"Error:\033[1;33m Wrong number of arguments\n", 48);
 	else if (error == 1)
-		write(2, "Error: Enter a valid number\n", 29);
+		write(2, RED"Error:\033[1;33m Enter a valid number\n", 42);
 	else if (error == 2)
-		write(2, "Error: Negative argument\n", 25);
+		write(2, RED"Error:\033[1;33m Negative argument\n", 39);
 	else if (error == 3)
-		write(2, "Error: Argument overflowing max int\n", 36);
+		write(2, RED"Error:\033[1;33m Argument overflowing max int\n", 50);
 	ft_exit(data, 1);
 }
 
@@ -77,10 +77,10 @@ void	ft_print_event(t_philo *ph, int status)
 
 void	ft_status_print(size_t time, int ph, char *event)
 {
-	printf(GREEN" ✓ ");
+	printf(GREEN" ✓  ");
 	printf(BLUE"%zu\033[1;32m m/s ", time);
-	printf("Philo ");
-	printf("[\033[1;34m%d\033[1;32m] "DEFAULT, ph);
+	printf(" Philosopher ");
+	printf("[\033[1;34m%d\033[1;32m]  "DEFAULT, ph);
 	printf("%s\n"DEFAULT, event);
 }
 

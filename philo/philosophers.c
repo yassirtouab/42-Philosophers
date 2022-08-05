@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:15:09 by ytouab            #+#    #+#             */
-/*   Updated: 2022/08/04 22:06:12 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/05 17:53:34 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_simulate(t_data *data)
 	i = -1;
 	while (++i < data->number_of_philos)
 	{
-		pthread_create(&data->philos[i].thread, NULL, &ft_routine, data->philos);
+		pthread_create(&data->philos[i].thread, NULL, &ft_routine, &data->philos[i]);
 		usleep(60);
 		// pthread_join(data->philos[i].thread, NULL);
 	}
@@ -85,7 +85,7 @@ int	main(int ac, char **av)
 	if (ac == 6 || ac == 5)
 	{
 
-		printf("TIME: |%ld|\n", ft_curr_time());
+		// printf("TIME: |%ld|\n", ft_curr_time());
 		take_args(&data, ac, av);
 		ft_print_params(&data);
 		ft_init(&data);
