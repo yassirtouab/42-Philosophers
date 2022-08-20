@@ -6,11 +6,37 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:55:24 by ytouab            #+#    #+#             */
-/*   Updated: 2022/08/20 01:49:56 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/20 19:07:02 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
+
+char	*ft_strchr(const char *str, int c)
+{
+	if (!str)
+		return (NULL);
+	while (*str)
+	{
+		if (*str == (unsigned char)c)
+			return ((char *)str);
+		str++;
+	}
+	if ((unsigned char)c == 0)
+		return ((char *)str);
+	return (0);
+}
+
+int	ft_delimiter(char c, char *charset)
+{
+	int	i;
+
+	i = -1;
+	while (charset[++i])
+		if (charset[i] == c)
+			return (1);
+	return (0);
+}
 
 void	ft_isdigit_signs(const char *s, t_data *data, size_t i)
 {

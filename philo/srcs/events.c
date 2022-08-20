@@ -36,10 +36,6 @@ void	ft_eating(t_philo *ph)
 	ft_usleep(ph->data->time_to_eat);
 	pthread_mutex_unlock(&ph->eat_mutex);
 	ph->status = !EATING;
-}
-
-void	ft_put_forks(t_philo *ph)
-{
 	pthread_mutex_unlock(&ph->data->fork[ph->id]);
 	pthread_mutex_unlock(
 		&ph->data->fork[(ph->id + 1) % ph->data->number_of_philos]);

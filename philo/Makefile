@@ -6,7 +6,7 @@
 #    By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/20 16:11:26 by ytouab            #+#    #+#              #
-#    Updated: 2022/08/20 03:49:58 by ytouab           ###   ########.fr        #
+#    Updated: 2022/08/20 21:09:46 by ytouab           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,14 +23,13 @@ RM			=	rm -f
 
 CC		=	gcc
 
-# CF		=	-Wall -Wextra -Werror
-CF		=	-g
+CF		=	-Wall -Wextra -Werror
 
 TH		=	-pthread
 
 SRCS		=	srcs/parse.c \
+				srcs/print.c \
 				srcs/tools.c \
-				srcs/utils.c \
 				srcs/events.c \
 
 
