@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:11:50 by ytouab            #+#    #+#             */
-/*   Updated: 2022/08/04 03:00:08 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/20 03:55:06 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,27 @@ typedef struct s_philo
 {
 	struct s_data		*data;
 	int					id;
-	int					status;
-	size_t				dead_time;
-	size_t				eat_count;
-	size_t				last_meal_time;
+	char					status;
+	unsigned			dead_time;
+	unsigned			eat_count;
+	unsigned long long	last_meal_time;
 	pthread_mutex_t		eat_mutex;
 	pthread_t			thread;
-}					t_philo;
+}						t_philo;
 
 typedef struct s_data
 {
-	t_philo			*philos;
-	int				dead;
-	size_t			start_time;
-	int				number_of_philos;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				must_eat_times;
-	int				max_meals;
-	int				ac;
-	pthread_mutex_t	*fork;
-	pthread_mutex_t	event;
+	t_philo				*philos;
+	pthread_mutex_t		*fork;
+	pthread_mutex_t		event;
+	char				dead;
+	unsigned long long	start_time;
+	long				number_of_philos;
+	long				time_to_eat;
+	unsigned long long	time_to_die;
+	long				time_to_sleep;
+	long				must_eat_times;
+	int					ac;
 }						t_data;
 
 /* -------------FUNCTIONS -------------*/
@@ -79,7 +78,7 @@ void	ft_isdigit_signs(const char *s, t_data *data, size_t i);
 
 	//	TOOLS
 
-void	ft_print_params(t_data *data);
+// void	ft_print_params(t_data *data);
 void	ft_init_data(t_data *data, int ac);
 void	ft_exit(t_data *data, int code);
 void	ft_error(t_data *data, int error);
@@ -94,8 +93,8 @@ char	*ft_strchr(const char *str, int c);
 
 	//	TIME
 
-size_t	ft_curr_time(void);
-void	ft_usleep(size_t time);
+long long	ft_curr_time(void);
+void	ft_usleep(unsigned time);
 
 	//	EVENTS
 
@@ -105,5 +104,9 @@ void	ft_eating(t_philo *ph);
 void	ft_put_forks(t_philo *ph);
 void	ft_dead(t_philo *ph);
 void	ft_sleeping(t_philo *ph);
+
+void	ft_thread_create(t_data *data);
+
+void	ft_print_params(t_data *data);
 
 #endif

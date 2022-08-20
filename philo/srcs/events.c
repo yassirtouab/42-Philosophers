@@ -21,7 +21,8 @@ void	ft_take_forks(t_philo *ph)
 {
 	pthread_mutex_lock(&ph->data->fork[ph->id]);
 	ft_print_event(ph, TOOK_FORK);
-	pthread_mutex_lock(&ph->data->fork[(ph->id + 1) % ph->data->number_of_philos]);
+	pthread_mutex_lock(&ph->data->fork[(ph->id + 1)
+		% ph->data->number_of_philos]);
 	ph->status = EATING;
 	pthread_mutex_lock(&ph->eat_mutex);
 	ft_print_event(ph, TOOK_FORK);

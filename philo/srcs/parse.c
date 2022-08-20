@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:55:24 by ytouab            #+#    #+#             */
-/*   Updated: 2022/07/12 01:33:33 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/08/20 01:49:56 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,6 @@ void	take_args(t_data *data, int ac, char **av)
 	data->time_to_sleep = super_atoi(av[4], data, 0, 0);
 	if (ac == 6)
 		data->must_eat_times = super_atoi(av[5], data, 0, 0);
+	else
+		data->must_eat_times = -1;
 }
