@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
+/*   By: ytouab <ytouab@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 09:40:58 by ytouab            #+#    #+#             */
-/*   Updated: 2022/08/20 21:09:15 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/09/19 19:59:21 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_print_event(t_philo *ph, int status)
 {
 	char	*event;
 
+	event = NULL;
 	pthread_mutex_lock(&ph->data->event);
 	if (status == THINKING)
 		event = PURPLE"is thinking";
