@@ -6,7 +6,7 @@
 /*   By: ytouab <ytouab@student.42abudhabi.ae>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 16:15:09 by ytouab            #+#    #+#             */
-/*   Updated: 2022/08/20 19:08:04 by ytouab           ###   ########.fr       */
+/*   Updated: 2022/10/05 13:35:58 by ytouab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	*ft_routine(void *philo)
 	while (ph->data->ac != 6
 		|| ph->eat_count < ph->data->must_eat_times)
 	{
-		ft_thinking(ph);
 		ft_take_forks(ph);
 		ft_eating(ph);
 		ft_sleeping(ph);
+		ft_thinking(ph);
 	}
 	return (NULL);
 }
